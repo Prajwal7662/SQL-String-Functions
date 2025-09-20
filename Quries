@@ -1,0 +1,50 @@
+# Databases
+
+use world;
+select * from city;
+select ID,Name,Countrycode,Dist,Population,concat(Name," ",Countrycode)as NameCode from city;
+
+
+## upper and lower
+
+select ID,lower(Name) as lfn from city ;
+select ID,upper(Countrycode) as lfn from city; 
+
+## Replace
+
+select replace("Hello world","world","sql");
+#select replace("Name","Prajwal") from city;
+
+##left and right
+
+select * from country;
+select code,upper(left(continent,3)) from country;
+
+## substring
+
+select * from country;
+select code,name,continent,region,substring(region,1,3) as new_reg from country;
+
+## trim,ltrim,rtrim
+
+select name,trim(concat(" ","continent"," "))as new_con from country;
+
+## reverse
+
+select reverse("Prajwal");
+
+## length
+
+select length("Prajwal");
+select code,name,continent,length(continent) as lcon from country
+order by lcon desc;
+
+## string fun
+#concat
+
+select * from city;
+select name,countrycode,dist,concat(name,"    ",countrycode) as nc from city;
+
+select name,code,lower(left(continent,7)) from country;
+
+select name,code,continent ,length(continent) as lc from country;
